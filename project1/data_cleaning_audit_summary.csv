@@ -1,0 +1,12 @@
+Audit_Metric,Count
+Original Row Count,1000
+Duplicates Removed,40
+Final Cleaned Row Count,960
+Missing Revenue Remaining,17
+Missing Operating Profit Remaining,12
+Missing Net Income Remaining,24
+Missing EPS Remaining,86
+EPS Outliers Corrected/Flagged,7
+Accounting Anomaly (Net Income > Rev),17
+Companies Operating at Loss,88
+Companies with Net Loss,164
