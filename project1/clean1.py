@@ -1,26 +1,4 @@
-"""
-Financial Performance Data Cleaning Pipeline
-=============================================
-Cleans and standardizes the messy financial dataset (messy_financial_data.csv)
-for investment firm cross-sector analysis.
 
-Key Pipeline Steps:
-  1. Load raw data and inspect initial state
-  2. Clean column names
-  3. Detect and remove duplicate records
-  4. Clean & standardize identifiers (Company_ID, Ticker, Company_Name)
-  5. Harmonize Sector categories & impute missing sectors
-  6. Standardize Currency
-  7. Parse mixed-format Reporting_Period dates & extract Fiscal_Year
-  8. Parse messy numeric financial fields (Revenue, Operating_Profit, Net_Income)
-  9. Parse and validate EPS (handle accounting negatives & outliers)
- 10. Harmonize & recalculate Profit Margins (Operating_Margin & Net_Profit_Margin)
- 11. Cross-validate financial relationships and flag anomalies
- 12. Impute missing figures using accounting identities
- 13. Create Data Quality & Audit Flags
- 14. Produce Sector Performance Comparison Benchmark
- 15. Export Cleaned Dataset and Summaries
-"""
 
 import os
 import re
@@ -233,9 +211,7 @@ def parse_reporting_date(date_val):
 # -----------------------------------------------------------------------------
 
 def clean_financial_dataset(input_csv_path: str, output_csv_path: str):
-    print("====================================================================")
-    print("        INVESTMENT FIRM - FINANCIAL DATA CLEANING PIPELINE          ")
-    print("====================================================================")
+
 
     # 1. LOAD THE DATA
     print(f"\n[Step 1] Loading raw dataset from: {input_csv_path}")
@@ -540,9 +516,6 @@ def clean_financial_dataset(input_csv_path: str, output_csv_path: str):
     df_quality_summary.to_csv(audit_summary_path, index=False)
     print(f" -> Quality Audit Summary: {audit_summary_path}")
 
-    print("\n====================================================================")
-    print("                    DATA CLEANING COMPLETE!                         ")
-    print("====================================================================")
     return df_cleaned, sector_benchmark, df_quality_summary
 
 

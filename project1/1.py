@@ -1,18 +1,3 @@
-"""
-Messy Financial Dataset Generator
----------------------------------
-Simulates realistic financial performance data for 1,000 companies across various sectors.
-Introduces realistic "messy" data artifacts common in corporate financial reporting,
-SEC filings, vendor aggregations, and legacy accounting exports:
-  - Mixed data types (numeric, formatted strings, accounting parentheses)
-  - Currency symbols, abbreviations (k, M, B), and comma separators
-  - Inconsistent sector naming, casing, and whitespace
-  - Heterogeneous date/fiscal year representations
-  - Missing values in multiple representations (NaN, 'N/A', '-', 'None', '#VALUE!')
-  - Outliers, fat-finger errors, and accounting contradictions
-  - Exact and near-duplicate records
-"""
-
 import os
 import random
 import numpy as np
